@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "models",
+  "info": {
+    "name": "Modelos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "height": {
+      "required": true,
+      "type": "integer"
+    },
+    "bust": {
+      "type": "integer",
+      "required": true
+    },
+    "waist": {
+      "type": "integer",
+      "required": true
+    },
+    "hips": {
+      "type": "integer",
+      "required": false
+    },
+    "size": {
+      "type": "integer",
+      "required": true
+    },
+    "shoes": {
+      "type": "integer",
+      "required": true
+    },
+    "hair": {
+      "type": "enumeration",
+      "enum": [
+        "Loiros",
+        "Ruivos",
+        "Castanhos",
+        "CastanhoEscuros",
+        "CastanhoClaros",
+        "Pretos"
+      ],
+      "required": true
+    },
+    "eyes": {
+      "type": "enumeration",
+      "enum": [
+        "Azuis",
+        "Verdes",
+        "Pretos",
+        "Castanhos"
+      ],
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Women",
+        "Curve",
+        "Men"
+      ]
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
